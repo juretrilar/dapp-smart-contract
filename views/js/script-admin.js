@@ -280,11 +280,10 @@ $( document ).ready(function() {
                 if(!error) { 
 				$(".contractcreator").html(result); 
 			
-				/* Modal if myacount not contract creator */
-				if (result !== myAccount) {
-			 
-						$('#noadmin').modal('open'); 
-				}
+					/* Modal if myacount not contract creator */
+					if (result !== myAccount) {			 
+							$('#noadmin').modal('open'); 
+					}
 				
 				} else console.error(error);
                 });

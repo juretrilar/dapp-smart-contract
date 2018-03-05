@@ -31,7 +31,12 @@ $( document ).ready(function() {
 			outDuration: 500
 			});
   
-          
+     
+    /* modal help open on load*/	
+	//$('#help').modal('open'); 
+	
+	
+		
                 /* ali imamo povezavo */
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider); /* metmask*/
