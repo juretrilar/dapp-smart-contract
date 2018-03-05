@@ -1,5 +1,5 @@
 # dapp-smart-contract
-Harness the power of Ethereum smart contracts, tokens and decentralized client apps with this example/boilerplate/template.
+Harness the power of Ethereum smart contracts, tokens and decentralized client apps with this examplary template.
 
 Todo:
 - fixes
