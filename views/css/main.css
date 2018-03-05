@@ -5,8 +5,8 @@
 .container.contract .shadow:first-child { border-top-left-radius:5px; border-top-right-radius:5px; padding-bottom:100px; }
 .container.contract .shadow:last-child { border-bottom-left-radius:5px;  border-bottom-right-radius:5px; }
 
-.gradientbackground { background: linear-gradient(180deg, #433d95 1%,#232859 85%,#433d95 100%); }
-.gradient1 { background: linear-gradient(135deg, #363e8c 1%,#534db1 100%); }
+.gradientbackground { background: linear-gradient(180deg, #303f9f 1%,#1a237e 85%,#303f9f 100%); }
+.gradient1 { background: linear-gradient(135deg, #3949ab 1%,#283593 100%); }
 .voffset {margin-top:-60px;}
         
 .infolabelline {width: 50%; height: 11px; border-bottom: 1px solid #e8eaf6; text-align: center; margin:20px auto;}
@@ -56,3 +56,7 @@ input.balanceinput {    width: 40px !important;
 .roundcornerleftbottom { border-bottom-left-radius:5px;}
 
 .setbalanceicon { font-size:16px; margin-left:5px; cursor:pointer;}
+
+.secondary-content {
+    color: inherit;
+}

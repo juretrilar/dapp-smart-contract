@@ -23,6 +23,14 @@ $( document ).ready(function() {
                 url: localhost:3000
 
   */
+  
+  /*init modals*/
+  $('.modal').modal({
+			dismissible: false, // Modal can be dismissed by clicking outside of the modal			
+			inDuration: 500, // Transition in duration
+			outDuration: 500
+			});
+  
           
                 /* ali imamo povezavo */
         if (typeof web3 !== 'undefined') {
@@ -306,13 +314,7 @@ $( document ).ready(function() {
 		
 		
 		
-		$('.modal').modal({
-			dismissible: false, // Modal can be dismissed by clicking outside of the modal			
-			inDuration: 500, // Transition in duration
-			outDuration: 500
-			
-			}
-			);
+		$('#modal1').modal('open');
 		
 			
 			
@@ -333,7 +335,7 @@ $( document ).ready(function() {
 			
 			FinalContract.userSignArticles( myAccount, articlesignarray,function(error, result){ /* get array */
                 if(!error) { 			
-					$("#transactionid").html(result);					
+					$("#transactionid").html('<a href="https://ropsten.etherscan.io/tx/'+result+'" target="_blank">'+result+'</a>');								
 				} else console.error("Rejected: "+error);
                 });			
 				

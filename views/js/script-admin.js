@@ -23,6 +23,12 @@ $( document ).ready(function() {
                 url: localhost:3000
 
   */
+  
+  /*init modals*/
+  $('.modal').modal({
+			dismissible: false, // Modal can be dismissed by clicking outside of the modal			
+			inDuration: 500, // Transition in duration
+			outDuration: 500});
           
                 /* ali imamo povezavo */
         if (typeof web3 !== 'undefined') {
@@ -271,7 +277,16 @@ $( document ).ready(function() {
 		$(".contractaddress").html(smartcontractaddress);	
 		
         FinalContract.contractCreatorAddress.call(function(error, result){ /* CALL constant */
-                if(!error) { $(".contractcreator").html(result); } else console.error(error);
+                if(!error) { 
+				$(".contractcreator").html(result); 
+			
+				/* Modal if myacount not contract creator */
+				if (result !== myAccount) {
+			 
+						$('#noadmin').modal('open'); 
+				}
+				
+				} else console.error(error);
                 });
 		
 		FinalContract.contractName.call(function(error, result){ /* CALL constant */
@@ -339,19 +354,13 @@ $( document ).ready(function() {
 		/* SIGN CONTRACT AND ENGRAVE*/
         $("#newarticle").click(function() {
 		
-		$('.modal').modal({
-			dismissible: false, // Modal can be dismissed by clicking outside of the modal			
-			inDuration: 500, // Transition in duration
-			outDuration: 500
-			
-			}
-			);
+		$('#modal1').modal('open');
 		
 			var newarticlestring = $("#newarticletext").val();
 			
 			FinalContract.addHashValue(newarticlestring,function(error, result){ /* get array */
                 if(!error) { 			
-					$("#transactionid").html(result);
+					$("#transactionid").html('<a href="https://ropsten.etherscan.io/tx/'+result+'" target="_blank">'+result+'</a>');
 					
 					
 				/* add provizoriš item to list*/
