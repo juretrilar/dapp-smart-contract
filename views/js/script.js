@@ -281,10 +281,10 @@ $( document ).ready(function() {
 		
 		
 		
-		$(".contractaddress").html(smartcontractaddress);	
+		$(".contractaddress").html('<a href="https://ropsten.etherscan.io/address/'+smartcontractaddress+'" target="_blank">'+smartcontractaddress+'</a>');	
 		
         FinalContract.contractCreatorAddress.call(function(error, result){ /* CALL constant */
-                if(!error) { $(".contractcreator").html(result); } else console.error(error);
+                if(!error) { $(".contractcreator").html('<a href="https://ropsten.etherscan.io/address/'+result+'" target="_blank">'+result+'</a>'); } else console.error(error);
                 });
 		
 		FinalContract.contractName.call(function(error, result){ /* CALL constant */
@@ -341,7 +341,10 @@ $( document ).ready(function() {
 			FinalContract.userSignArticles( myAccount, articlesignarray,function(error, result){ /* get array */
                 if(!error) { 			
 					$("#transactionid").html('<a href="https://ropsten.etherscan.io/tx/'+result+'" target="_blank">'+result+'</a>');								
-				} else console.error("Rejected: "+error);
+				} else {
+					$("#transactionid").html("Rejected");	
+					console.error("Rejected: "+error);
+				}
                 });			
 				
 		});					

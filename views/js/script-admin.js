@@ -274,11 +274,11 @@ $( document ).ready(function() {
 		
 		
 		
-		$(".contractaddress").html(smartcontractaddress);	
+		$(".contractaddress").html('<a href="https://ropsten.etherscan.io/address/'+smartcontractaddress+'" target="_blank">'+smartcontractaddress+'</a>');	
 		
         FinalContract.contractCreatorAddress.call(function(error, result){ /* CALL constant */
                 if(!error) { 
-				$(".contractcreator").html(result); 
+				$(".contractcreator").html('<a href="https://ropsten.etherscan.io/address/'+result+'" target="_blank">'+result+'</a>'); 
 			
 					/* Modal if myacount not contract creator */
 					if (result !== myAccount) {			 

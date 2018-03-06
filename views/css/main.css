@@ -35,6 +35,10 @@
 .card.article .articlehash span { user-select: all; font-style:normal;}
 .card.article { background-color:transparent; border: 1px solid rgba(160,160,160,0.2); box-shadow:none; border-radius:3px; margin-top:60px; margin-bottom:40px;}
 .card.article .card-action .row {margin-bottom:0px;}
+a {
+color: #1a237e; 
+}
+
 
 /*admin page*/
 .admingradientbackground { background: linear-gradient(180deg,#37474f 1%,#263238 85%,#37474f 100%); }
@@ -59,4 +63,8 @@ input.balanceinput {    width: 40px !important;
 
 .secondary-content {
     color: inherit;
+}
+
+.admin a {
+    color: #B71C1C;
 }
