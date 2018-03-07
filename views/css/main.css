@@ -39,6 +39,11 @@ a {
 color: #1a237e; 
 }
 
+ul.somelist li {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
 
 /*admin page*/
 .admingradientbackground { background: linear-gradient(180deg,#37474f 1%,#263238 85%,#37474f 100%); }
