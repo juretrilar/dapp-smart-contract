@@ -31,4 +31,4 @@ Platforms and libraries used:
 - Node.js with Express
 - Web3.js javascript interface for Ethereum blockchain
 - Remix.ethereum.org Solidity IDE and smart contract deployment on testnet
-- MaterializeCSS with Google Material design icons
+- jQuery, MaterializeCSS with Google Material design icons
