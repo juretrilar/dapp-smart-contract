@@ -61,7 +61,12 @@ input.balanceinput {    width: 40px !important;
     margin: 0 !important;
     height: 1rem !important; 
 	}
-
+input.dummyaddressinput { 
+    margin: 0 !important;
+    height: 1rem !important; 
+	}
+	
+	
 .roundcornerleftbottom { border-bottom-left-radius:5px;}
 
 .setbalanceicon { font-size:16px; margin-left:5px; cursor:pointer;}

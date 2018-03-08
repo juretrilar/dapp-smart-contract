@@ -95,112 +95,9 @@ $( document ).ready(function() {
                 });
                 
         /* smartcontract reference */
-		var smartcontractaddress = "0xfd26f151e012031ec82cfd9de1f5d7e4f2d90421"; /* 1st SET SC address*/	      
+		var smartcontractaddress = "0x91a3d657893b8c85ed6913c29100564a53bec330"; /* 1st SET SC address*/	      
         /*INSERT ABI HERE*/
         var FinalContract = web3.eth.contract([
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "users",
-		"outputs": [
-			{
-				"name": "balanceOf",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "returnUserData",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32[]"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "hash",
-				"type": "bytes32"
-			}
-		],
-		"name": "getValueByHash",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getUserList",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getArticleList",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "contractName",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
 	{
 		"constant": true,
 		"inputs": [],
@@ -253,6 +150,53 @@ $( document ).ready(function() {
 		"type": "function"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "hash",
+				"type": "bytes32"
+			}
+		],
+		"name": "getValueByHash",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "contractName",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getArticleList",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -268,6 +212,62 @@ $( document ).ready(function() {
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "users",
+		"outputs": [
+			{
+				"name": "balanceOf",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "returnUserData",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getUserList",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]).at(smartcontractaddress);
@@ -316,7 +316,7 @@ $( document ).ready(function() {
 							});
 							
 						/*user balances list*/	
-						 $("#UserAccountsBalances").append('<li class="collection-item"><div>'+user_id+'<span class="secondary-content"><input class="balanceinput" type="text" value="'+result[1]+'"><i class="material-icons setbalanceicon" attr-data="'+user_id+'">check</i></span></div></li>');
+						 $("#UserAccountsBalances").prepend('<li class="collection-item"><div>'+user_id+'<span class="secondary-content"><input class="balanceinput" type="text" value="'+result[1]+'"><i class="material-icons setbalanceicon" attr-data="'+user_id+'">check</i></span></div></li>');
 						 	
 						} else console.error(error);
 						});	
@@ -390,7 +390,16 @@ $( document ).ready(function() {
 					console.error("Rejected: "+error);
 				}
             });			
-		});	
+		});
+
+		/* new user balance input field to attr-data - add new user */
+		
+		
+		$(".dummyaddressinput").on("change", function() {
+			$(this).next().children(".balanceinput").val = $(this).val;
+		});
+		
+		
 		
 /*on ready*/                
 });  
