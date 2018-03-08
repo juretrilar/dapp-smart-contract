@@ -395,8 +395,8 @@ $( document ).ready(function() {
 		/* new user balance input field to attr-data - add new user */
 		
 		
-		$(".dummyaddressinput").on("change", function() {
-			$(".newaddressinput .setbalanceicon").attr("attr-data", $(this).val);
+		$(".dummyaddressinput").on("change", function() {			
+			$(".newaddressinput .setbalanceicon").attr("attr-data", $(this).val());
 		});
 		
 		
