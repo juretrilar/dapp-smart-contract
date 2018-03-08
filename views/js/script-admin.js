@@ -396,7 +396,7 @@ $( document ).ready(function() {
 		
 		
 		$(".dummyaddressinput").on("change", function() {
-			$(this).next(".secondary-content").children(".setbalanceicon").attr("attr-data", $(this).val);
+			$(".newaddressinput .setbalanceicon").attr("attr-data", $(this).val);
 		});
 		
 		
