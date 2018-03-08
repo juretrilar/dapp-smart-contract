@@ -384,7 +384,7 @@ $( document ).ready(function() {
 			FinalContract.setUserTokenBalance(setaddress, setbalance,function(error, result){ 
                 if(!error) { 			
 				
-					$("#tokenbalance").html(setbalance);
+					$("#tokenbalance").html(setbalance); 
 					console.log("Tx: "+result);				
 				} else {					
 					console.error("Rejected: "+error);
