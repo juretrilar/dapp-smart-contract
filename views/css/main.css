@@ -64,6 +64,7 @@ input.balanceinput {    width: 40px !important;
 input.dummyaddressinput { 
     margin: 0 !important;
     height: 1rem !important; 
+	width:80%;
 	}
 	
 	
